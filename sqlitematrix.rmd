@@ -305,7 +305,7 @@ TreadRna <- function(name, conn, row) {
 }
 ```
 
-Benchmark for the speed of writing the matrix, reading the complete matrix, reading one field of the matrix, reading one column of the matrix and reading one row of the matrix to and from sqlite in the serialisation approach. (repeated a 100 times)
+Benchmark for the speed of writing the matrix, reading the complete matrix, reading one cell of the matrix, reading one column of the matrix and reading one row of the matrix to and from sqlite in the serialisation approach. (repeated a 100 times)
 
 ```{r benchmarkSelf, warning=FALSE, message = FALSE}
 
@@ -318,7 +318,7 @@ Sall <- benchmark(SWrite=writeMatrixToSqlite(testMatrix),
 )
 ```
 
-Benchmark for the speed of writing the matrix, reading the complete matrix, reading one field of the matrix, reading one column of the matrix and reading one row of the matrix to and from sqlite in the table approach. (repeated a 100 times)
+Benchmark for the speed of writing the matrix, reading the complete matrix, reading one cell of the matrix, reading one column of the matrix and reading one row of the matrix to and from sqlite in the table approach. (repeated a 100 times)
 ```{r benchmarkDBI, warning=FALSE}
 Tall <- benchmark(Twrite=writeMatrixtoTable(testMatrix, "gep2.db", "matrixz"),
                   TARead=(valTA <- readtabletomatrix("matrixz", "gep2.db")),
